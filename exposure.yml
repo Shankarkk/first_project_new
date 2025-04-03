@@ -1,0 +1,33 @@
+version: 2
+
+
+exposures:
+
+  - name: weekly_metrics
+    label: shankar by the Week
+    type: dashboard
+    maturity: high
+    description: 
+     For more exposure about project details
+
+    depends_on:
+      - ref('fact_orders')
+      - ref('snap_orderdetails')
+      - ref('order_lineitem')
+      - ref('dim_orders')
+      - ref('dim_supplier_parts')
+      - ref('stg_supplier')
+      - ref('stg_region')
+      - ref('stg_partsupp')
+      - ref('stg_part')
+      - source('snowflake_data','RAW_CUSTOMER')
+      - source('snowflake_data','RAW_NATION')
+      - source('snowflake_data','RAW_LINEITEM')
+      - source('snowflake_data','RAW_CUSTOMER_NATION')
+      - source('datafeed_shared_schema','RAW_ORDERS')
+      
+  
+    owner:
+      name:  shankar
+      email: mailbox869115@gmail.com
+

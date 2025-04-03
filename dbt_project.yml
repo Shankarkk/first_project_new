@@ -40,3 +40,10 @@ models:
     # Applies to all files under models/example/
     example:
       +materialized: table
+    confirmed:
+      +materialized: table
+    staging:
+      +materialized: table
+snapshots:
+      +target_schema: DWH
+  
